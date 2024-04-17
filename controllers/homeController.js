@@ -1,10 +1,50 @@
 // homeController.js
 "use strict";
 
+const { request } = require("express");
+
+var courses = [
+    {
+        "courses": [
+            {
+                "title": "Event Driven Cakes",
+                "cost": 50
+            },
+            {
+                "title": "Asynchronous Artichoke",
+                "cost": 25
+            },
+            {
+                "title": "Object Oriented Orange Juice",
+                "cost": 10
+            }
+        ]
+    }
+];
 /**
  * Listing 12.5 (p. 178)
  * 홈 컨트롤러로의 라우팅
  */
+exports.showIndex = (req, res) => {
+    res.render("index");
+};
+exports.showContact = (req, res) => {
+    res.render("contact");
+};
+exports.showError = (req, res) => {
+    res.render("error");
+};
+exports.showCourses = (req, res) => {
+    res.render("courses", 
+    {
+        offeredCourses: courses
+    });
+};
+exports.showThanks = (req, res) => {
+    res.render("thanks");
+};
+
+
 
 
 /**
