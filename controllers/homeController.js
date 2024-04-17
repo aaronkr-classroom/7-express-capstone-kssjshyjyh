@@ -1,6 +1,6 @@
 // homeController.js
 "use strict";
-
+ 
 const { request } = require("express");
 
 var courses = [
